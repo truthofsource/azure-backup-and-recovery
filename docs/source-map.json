@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "reviewedDate": "2026-11-06",
+  "files": [
+    {
+      "source": "scripts/payroll_key_recovery.py",
+      "sourceSha256": "e79ecd4d65fe6593deb1a554b0f675016b910992999738f32303e66e8fe4d1b0",
+      "publicFile": "reference/payroll_key_recovery.py",
+      "changes": "Retain backup/lease/restore/version/receipt logic; remove Azure transport and CLI; replace source identities with examples"
+    },
+    {
+      "source": "scripts/test_payroll_key_recovery.py",
+      "sourceSha256": "3287d33dec26ec58a3fd8100c0026aa00f904fcd1eba26089a111a2f927a381e",
+      "publicFile": "reference/test_payroll_key_recovery.py",
+      "changes": "Neutral example identifiers/labels; logic retained"
+    },
+    {
+      "source": "platform/backstage/hosting/vm/backup-postgres.sh",
+      "sourceSha256": "1d224b8805cb6c71eb761032fb5b23564c75145b6641ab69b19ba497237ca2a9",
+      "publicFile": "scripts/backup-postgres.sh",
+      "changes": "Actual operational logic; neutral portal names; explicit cloud-upload opt-in guard added to uploader"
+    },
+    {
+      "source": "platform/backstage/hosting/vm/check-restore.sh",
+      "sourceSha256": "0b36e55510b5d191e60ed9518bdd6747084fc721b536e3856ca5e9b858584b12",
+      "publicFile": "scripts/check-restore.sh",
+      "changes": "Actual operational logic; neutral portal names; explicit cloud-upload opt-in guard added to uploader"
+    },
+    {
+      "source": "platform/backstage/hosting/vm/snapshot_cluster.py",
+      "sourceSha256": "aaaf4aba724ca05a8072a89f1bb459b4ef37299990203c20e931f9344226092d",
+      "publicFile": "scripts/snapshot_cluster.py",
+      "changes": "Actual operational logic; neutral portal names; explicit cloud-upload opt-in guard added to uploader"
+    }
+  ],
+  "relatedAdaptations": [
+    {
+      "source": "infra/recovery/production/automation.tf",
+      "sourceSha256": "a65f09953ea30bd68aedddba48c6c5060f52a40d04c509a306bc2e8f1c0cad45",
+      "publicFile": "infra/key-backup-access.tf",
+      "relationship": "Parameterized reference adaptation, not a byte-identical copy or live deployment"
+    },
+    {
+      "source": "infra/platform/backstage/low-cost-vm-backup.tf",
+      "sourceSha256": "105ce0fe7c3d507547100a32965681ed05ce488215ae87802908d7cde28be779",
+      "publicFile": "infra/monitoring.tf",
+      "relationship": "Parameterized reference adaptation, not a byte-identical copy or live deployment"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+subscription_id = "<your-subscription-id>"
+resource_group_name = "rg-example-operations"
+storage_account_name = "<globally-unique-backup-account>"
+workspace_name = "law-example-operations"
+enable_recovery_vm = false
+# Optional: exact managed-identity principal of your existing backup writer.
+backup_writer_principal_id = ""

@@ -1,0 +1,21 @@
+{
+  "title": "Azure Backup & Recovery Engineering",
+  "domain": "KEY VAULT / POSTGRESQL / BLOB / TERRAFORM STATE",
+  "subtitle": "A backup must preserve the data, its keys and a tested recovery path.",
+  "scenario": "Sensitive payroll records, uploaded documents and the engineering portal depend on different recovery mechanisms. A database copy alone cannot recover wrapped keys, files or runtime configuration.",
+  "outcome": "Verify key-version coverage, reject changed backup bytes and restore only into owned isolated targets.",
+  "flow": [
+    "Inventory versions and recovery dependencies",
+    "Acquire a finite backup lease",
+    "Create backup only for changed coverage or age",
+    "Verify retained bytes and create-only receipt",
+    "Restore into a disposable target and check versions",
+    "Record partial failures and owned cleanup"
+  ],
+  "notes": [
+    "The key orchestration is extracted implementation code; the default transport is a fictional in-memory fixture.",
+    "PostgreSQL scripts are actual VM helpers; no cloud restore is executed by this screen.",
+    "SQL/document/state rehearsals have separate acceptance requirements and are not claimed as completed."
+  ],
+  "boundary": "Actual recovery orchestration using fictional adapters; no Azure calls, real records or live cryptographic acceptance."
+}
