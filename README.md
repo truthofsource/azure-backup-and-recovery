@@ -1,6 +1,6 @@
 # Azure Backup & Recovery Engineering
 
-**Recover the data, its encryption keys and the application dependencies together.**
+**Recover the records, files, keys and settings the application needs to work.**
 
 [The problem](#the-business-problem) · [The solution](#the-solution) · [What was built](#what-was-built) · [Proof it works](#proof-it-works) · [Commands](docs/COMMANDS.md)
 
@@ -8,23 +8,19 @@
 
 ## The Business Problem
 
-A healthcare-services workforce platform stores sensitive records, uploaded evidence and engineering-portal data in different services. A database backup cannot open an encrypted field if its matching wrapping-key version is missing, and a restored application cannot run without its separate runtime configuration.
-
-1. **Backups without complete dependencies:** database, Blob metadata, key versions, configuration and identity must agree.
-2. **Successful upload without restore evidence:** a checksum is useful but does not prove a usable target or an authorized read.
-3. **Recovery that risks the live system:** restore drills must use exact owned targets and preserve production bindings.
+The platform stores information in several services. Restoring a database is not enough if uploaded files, encryption keys or application settings are missing. Recovery tests must also avoid changing the live system.
 
 ## The Solution
 
-Build separate recovery paths for Key Vault keys, PostgreSQL, documents and Terraform state. Inventory dependencies, verify create-only backup receipts, restore into disposable targets and retain explicit failure evidence. Schedule key-version coverage checks without blindly taking a full backup on every wake.
+Back up each required part, record how the parts fit together, and test recovery in a separate temporary environment. Check both the restored information and the access needed to use it. Keep failed checks visible rather than treating a saved backup file as proof of recovery.
 
-**Business outcome:** Reduce uncertainty during recovery and avoid declaring success while keys, files, permissions or application configuration are still missing.
+**Business outcome:** Reduce uncertainty during recovery and identify missing files, keys, permissions or settings before they cause a longer outage.
 
 ### Actual implementation
 
-This project uses the real platform's key-backup orchestration and eleven original recovery tests, plus its PostgreSQL backup/inventory/restore helpers. Identifying configuration is replaced with examples; no private source history, employee information, backup bytes or credentials are published. The default key transport is an in-memory fixture and the cloud HTTP adapter is omitted.
+This project uses the real platform's key-coordination of the backup steps and eleven original recovery tests, plus its PostgreSQL backup/inventory/restore helpers. Identifying configuration is replaced with examples; no private source history, employee information, backup bytes or credentials are published. The default key transport is an temporary test example held in memory and the code that connects to the cloud service over HTTP is omitted.
 
-Historical platform records describe a private key restore with synthetic wrap/unwrap verification, a recovered engineering portal, and later ordinary scheduled backup/coverage observations. SQL, document and Terraform-state drills prepared afterward are distinguished from those accepted tests. [Acceptance matrix](docs/ACCEPTANCE.md) · [Source map](docs/SOURCE-MAP.md).
+Historical platform records describe a private key restore with test-only wrap/unwrap verification, a recovered engineering portal, and later ordinary scheduled backup/coverage observations. SQL, document and Terraform-state drills prepared afterward are distinguished from those accepted tests. [Acceptance matrix](docs/ACCEPTANCE.md) · [Source map](docs/SOURCE-MAP.md).
 
 ## Architecture
 
@@ -46,10 +42,10 @@ flowchart LR
 
 | Component | Purpose | Implementation |
 | --- | --- | --- |
-| Actual key-backup orchestration | Inventory versions, create/read back backup, retain receipt and reconcile uncertain writes | [Source](reference/payroll_key_recovery.py) |
+| Actual key-coordination of the backup steps | Inventory versions, create/read back backup, retain receipt and reconcile uncertain writes | [Source](reference/payroll_key_recovery.py) |
 | Original recovery tests | Test rotation races, lost responses, target boundaries, checksum failures and partial coverage | [Tests](reference/test_payroll_key_recovery.py) |
 | Finite lease | Coordinate overlapping checks and fail when lease ownership is lost | [Lease implementation](reference/payroll_key_recovery.py) |
-| Actual PostgreSQL helpers | Dump plugin databases without role password hashes; verify an isolated restore | [Scripts](scripts/) |
+| Actual PostgreSQL helpers | Dump plugin databases without role password hashes; verify an restore into a separate test environment | [Scripts](scripts/) |
 | Storage and limited backup access | Keyless storage, versions, retention, container scope and opt-in exact-key metadata/backup role | [Terraform](infra/) |
 | Recovery workbench | Run the extracted key orchestration with fictional adapters and show rejection cases | [Demo](lab/domain.py) |
 

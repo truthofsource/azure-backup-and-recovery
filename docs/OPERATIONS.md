@@ -1,9 +1,11 @@
 # Recovery operations and troubleshooting
 
+**Terms used here:** Terraform state is its record of the cloud resources it manages.
+
 | Observation | Meaning | Next check |
 | --- | --- | --- |
 | Coverage current | Known versions and verified retained backup agree within the allowed age | Confirm ordinary check history and backup age; no forced backup needed |
-| Key changed during backup | Versions/enable flags changed between inventory and backup | No success/latest pointer; reconcile the new state before a bounded retry |
+| Key changed during backup | Versions/enable flags changed between inventory and backup | No success/latest pointer; reconcile the new state before a limited retry |
 | Lost Blob response | A write may have completed | Read back exact expected bytes before deciding whether another write is needed |
 | Lease conflict | Another coverage worker can own the lease | Treat overlap separately from permission/network failure |
 | Hash mismatch | Backup bytes no longer match trusted receipt | Stop before restore and preserve evidence |

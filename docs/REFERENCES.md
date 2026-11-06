@@ -4,7 +4,7 @@
 
 The architecture and operating lessons come from an Azure workforce/operations platform I built and operated. This public adaptation removes organization names, product branding, tenant/subscription/resource identifiers, private hostnames, employee records and secret material. Only curated reusable patterns are published; no private repository history is copied.
 
-The loopback demonstration remains a local reference. Selected implementation source and original tests are now included separately, with each extraction/adaptation recorded in SOURCE-MAP.md. Screenshots show their actual local execution with synthetic fixtures. Cloud integration or historical acceptance is not inferred from those screenshots.
+The loopback demonstration remains a local reference. Selected implementation source and original tests are now included separately, with each extraction/adaptation recorded in SOURCE-MAP.md. Screenshots show their actual local execution with test-only fixtures. Cloud integration or historical acceptance is not inferred from those screenshots.
 
 ## Technical references
 

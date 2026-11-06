@@ -1,5 +1,7 @@
 # Validation evidence — November 6, 2026
 
+**Terms used here:** A fixture is test data or a test setup used instead of real business records.
+
 ## Executed locally for this revision
 
 | Check | Result |

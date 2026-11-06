@@ -16,4 +16,4 @@ Key backup/restore/lease logic and original tests are retained. The actual Azure
 
 PostgreSQL helpers use neutral portal prefixes consistently; an explicit ALLOW_CLOUD_BACKUP opt-in guard is added to the public uploader. New public inventory tests use mocked subprocess results; they are not original production tests.
 
-Related Terraform/reference provenance is recorded separately in the machine map. Parameterized/portable roots retain their own integration boundaries; they are not identical copies of the full deployed infrastructure.
+The source map records where the Terraform and other reference files came from. The reusable examples still need their own connection tests and are not complete copies of the deployed setup.

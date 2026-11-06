@@ -8,7 +8,7 @@ These configurations adapt the same resource boundaries used in the author's wor
 
 | File | Purpose |
 | --- | --- |
-| [monitoring.tf](monitoring.tf) | 30-day operational workspace, dedicated StorageBlobLogs routing, container-scoped writer grant and backup lifecycle policy. |
+| [monitoring.tf](monitoring.tf) | 30-day operational workspace, dedicated StorageBlobLogs routing, container-specific writer grant and backup lifecycle policy. |
 | [storage.tf](storage.tf) | Private keyless versioned backup account and ARM container declaration. |
 | [recovery-vm.tf](recovery-vm.tf) | Opt-in private-NIC Linux VM, SSH keys, managed identity and Gen2 secure-boot requirements; no public IP. |
 | [tests/recovery.tftest.hcl](tests/recovery.tftest.hcl) | No VM/grant by default; retention, versioning and table-mode checks. |

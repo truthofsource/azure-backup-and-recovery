@@ -1,5 +1,7 @@
 # Commands and expected results
 
+**Terms used here:** A digest is a file or container fingerprint used to confirm the exact version. A managed identity lets an Azure service request access without storing a password in the application.
+
 Use Python 3.12. Run from the repository root. No default command calls Azure.
 
 ```bash
@@ -40,4 +42,4 @@ On a Linux shell, syntax inspection of the operational helpers does not run a ba
 bash -n scripts/backup-postgres.sh scripts/check-restore.sh
 ```
 
-The actual PostgreSQL helpers need Linux Docker, a reviewed digest-pinned PostgreSQL 16 image, a matching dump/checksum and preferably its inventory. The backup uploader additionally needs AzCopy and a separately commissioned container-scoped managed identity. Do not execute it against a live host just to validate this portfolio.
+The actual PostgreSQL helpers need Linux Docker, a reviewed digest-pinned PostgreSQL 16 image, a matching dump/checksum and preferably its inventory. The backup uploader additionally needs AzCopy and a separately commissioned container-specific managed identity. Do not execute it against a live host just to validate this portfolio.
