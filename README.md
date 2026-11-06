@@ -18,7 +18,7 @@ Back up each required part, record how the parts fit together, and test recovery
 
 ### Actual implementation
 
-This project uses the real platform's key-coordination of the backup steps and eleven original recovery tests, plus its PostgreSQL backup/inventory/restore helpers. Identifying configuration is replaced with examples; no private source history, employee information, backup bytes or credentials are published. The default key transport is an temporary test example held in memory and the code that connects to the cloud service over HTTP is omitted.
+This project uses the real platform's key-backup process and eleven original recovery tests, plus its PostgreSQL backup/inventory/restore helpers. Identifying configuration is replaced with examples; no private source history, employee information, backup bytes or credentials are published. The default key transport is a temporary test example held in memory and the code that connects to the cloud service over HTTP is omitted.
 
 Historical platform records describe a private key restore with test-only wrap/unwrap verification, a recovered engineering portal, and later ordinary scheduled backup/coverage observations. SQL, document and Terraform-state drills prepared afterward are distinguished from those accepted tests. [Acceptance matrix](docs/ACCEPTANCE.md) · [Source map](docs/SOURCE-MAP.md).
 
@@ -42,12 +42,12 @@ flowchart LR
 
 | Component | Purpose | Implementation |
 | --- | --- | --- |
-| Actual key-coordination of the backup steps | Inventory versions, create/read back backup, retain receipt and reconcile uncertain writes | [Source](reference/payroll_key_recovery.py) |
+| Key-backup process | List key versions, save and recheck backups, keep a result record and investigate unclear saves | [Source](reference/payroll_key_recovery.py) |
 | Original recovery tests | Test rotation races, lost responses, target boundaries, checksum failures and partial coverage | [Tests](reference/test_payroll_key_recovery.py) |
-| Finite lease | Coordinate overlapping checks and fail when lease ownership is lost | [Lease implementation](reference/payroll_key_recovery.py) |
-| Actual PostgreSQL helpers | Dump plugin databases without role password hashes; verify an restore into a separate test environment | [Scripts](scripts/) |
+| Temporary lock | Prevent checks from competing and stop if this process loses its temporary lock | [Lease implementation](reference/payroll_key_recovery.py) |
+| Actual PostgreSQL helpers | Save the portal databases without role password hashes, then test recovery separately | [Scripts](scripts/) |
 | Storage and limited backup access | Keyless storage, versions, retention, container scope and opt-in exact-key metadata/backup role | [Terraform](infra/) |
-| Recovery workbench | Run the extracted key orchestration with fictional adapters and show rejection cases | [Demo](lab/domain.py) |
+| Recovery workbench | Run the real key-backup rules with test connections and show which cases are rejected | [Demo](lab/domain.py) |
 
 ## Proof It Works
 
