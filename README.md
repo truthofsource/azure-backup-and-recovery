@@ -22,13 +22,27 @@ This project uses the real platform's key-backup process and eleven original rec
 
 Historical platform records describe a private key restore with test-only wrap/unwrap verification, a recovered engineering portal, and later ordinary scheduled backup/coverage observations. SQL, document and Terraform-state drills prepared afterward are distinguished from those accepted tests. [Acceptance matrix](docs/ACCEPTANCE.md) · [Source map](docs/SOURCE-MAP.md).
 
+## Tools Used and What They Do
+
+| Tool or service | What it does | Where it fits |
+| --- | --- | --- |
+| Azure Key Vault | Keep the versioned keys whose protected backups support recovery. | Actual platform dependency; key metadata and backup authority are scoped. |
+| Azure Blob Storage | Retain protected backup objects and supporting evidence. | Actual backup store; no real backup bytes are included here. |
+| PostgreSQL utilities, including pg_dumpall | Create and restore the engineering portal’s database backup. | Actual helper scripts; separate from Azure SQL recovery. |
+| AzCopy, gzip and SHA-256 utilities | Transfer backups, compress dumps and compare exact file fingerprints. | Actual operating utilities; managed-identity upload needs its own commissioned access. |
+| Bash and Docker | Run the selected Linux database backup/restore helper path. | Operating/test prerequisites; the demo does not start a live database. |
+| Python and SQLite | Exercise recovery rules and an isolated fictional database. | Public local model, not Azure SQL PITR or a PostgreSQL cluster restore. |
+| Terraform | Describe selected storage/logging and optional recovery resources. | Reference configuration; restore drills have separate acceptance status. |
+
+The source key-backup coordinator is also Python. Its local transport uses test responses; passing those tests does not establish real key-service access or cryptographic recovery.
+
 ## Step by Step
 
 A short walkthrough of the process, with technical instructions and evidence limits in the sections below.
 
 1. **Identify what must be recovered** — List the databases, files, encryption keys and settings the application needs. Record their owners and how those parts fit together.
 
-2. **Save and check the backups** — The included helpers save selected backups with records of their contents and file fingerprints. They check the saved copies rather than assuming an upload succeeded.
+2. **Save and check the backups (Key and database backup helpers)** — The included helpers save selected backups with records of their contents and file fingerprints. They check the saved copies rather than assuming an upload succeeded.
 
 3. **Prepare a separate restore target** — Use an isolated destination so a recovery test cannot overwrite the live system. The case study distinguishes completed recovery evidence from later rehearsals that remained prepared.
 
