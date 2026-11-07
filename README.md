@@ -130,6 +130,10 @@ Related [Terraform](infra/README.md) parameterizes the private backup-store/oper
 
 The live key coverage job checks every six hours UTC and backs up for changed versions/enable flags or a backup age of seven days. A check frequency is not a guarantee of record RPO. Measure actual recovery time by layer and business impact. [Scaling, costs and tradeoffs](docs/SCALING.md).
 
+## Troubleshooting Lessons
+
+A zero exit status did not prove a fresh backup existed. Recovery also had to wait for the final initialized database service, rather than an earlier temporary listener. [Read the incident, evidence and verification](docs/LESSONS-LEARNED.md).
+
 ## Project Guides
 
 | Guide | Purpose |
