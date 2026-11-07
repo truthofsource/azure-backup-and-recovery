@@ -2,7 +2,7 @@
 
 **Recover the records, files, keys and settings the application needs to work.**
 
-[The problem](#the-business-problem) · [The solution](#the-solution) · [What was built](#what-was-built) · [Proof it works](#proof-it-works) · [Commands](docs/COMMANDS.md)
+[The problem](#the-business-problem) · [The solution](#the-solution) · [What was built](#what-was-built) · [Proof it works](#proof-it-works) · [Commands](docs/COMMANDS.md) · [Step by step](#step-by-step)
 
 ![Working recovery orchestration](docs/images/01-overview.png)
 
@@ -21,6 +21,18 @@ Back up each required part, record how the parts fit together, and test recovery
 This project uses the real platform's key-backup process and eleven original recovery tests, plus its PostgreSQL backup/inventory/restore helpers. Identifying configuration is replaced with examples; no private source history, employee information, backup bytes or credentials are published. The default key transport is a temporary test example held in memory and the code that connects to the cloud service over HTTP is omitted.
 
 Historical platform records describe a private key restore with test-only wrap/unwrap verification, a recovered engineering portal, and later ordinary scheduled backup/coverage observations. SQL, document and Terraform-state drills prepared afterward are distinguished from those accepted tests. [Acceptance matrix](docs/ACCEPTANCE.md) · [Source map](docs/SOURCE-MAP.md).
+
+## Step by Step
+
+A short walkthrough of the process, with technical instructions and evidence limits in the sections below.
+
+1. **Identify what must be recovered** — List the databases, files, encryption keys and settings the application needs. Record their owners and how those parts fit together.
+
+2. **Save and check the backups** — The included helpers save selected backups with records of their contents and file fingerprints. They check the saved copies rather than assuming an upload succeeded.
+
+3. **Prepare a separate restore target** — Use an isolated destination so a recovery test cannot overwrite the live system. The case study distinguishes completed recovery evidence from later rehearsals that remained prepared.
+
+4. **Verify usability and close the test** — Compare recovered contents and check the access needed to use them. Record the result and remove or pause temporary resources when the test is complete.
 
 ## Architecture
 
