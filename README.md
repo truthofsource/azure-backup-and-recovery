@@ -8,7 +8,11 @@
 
 ## The Business Problem
 
-The platform stores information in several services. Restoring a database is not enough if uploaded files, encryption keys or application settings are missing. Recovery tests must also avoid changing the live system.
+The platform's working records depend on several services: database rows, uploaded documents, encryption keys, application configuration and supporting engineering systems. A failure or accidental change can affect one part while leaving the others available. Recovering those parts independently can still produce a system that cannot perform its normal work.
+
+A backup file alone leaves important questions open: can it be read, are the required key versions available, do the restored records match their files and can the service identity reach them? Testing recovery directly against production can put the remaining good data at risk. Temporary recovery resources also need a clear cleanup point.
+
+The business need was a dependency-aware recovery plan with isolated tests and recorded checks, so the team knows which recovery paths are proven and which still need preparation.
 
 ## The Solution
 
