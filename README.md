@@ -79,6 +79,12 @@ flowchart LR
 | Storage and limited backup access | Keyless storage, versions, retention, container scope and opt-in exact-key metadata/backup role | [Terraform](infra/) |
 | Recovery workbench | Run the real key-backup rules with test connections and show which cases are rejected | [Demo](lab/domain.py) |
 
+## Recovery Evidence in Sentinel
+
+Selected existing recovery and storage observations now reach the hub security workspace through a separate metadata-only collector. This adds investigation context; it does not turn a backup receipt into proof of restoration or activate new operations alerts.
+
+[Evidence, boundaries and the companion Sentinel implementation](docs/SECURITY-OBSERVABILITY.md) explains what was verified. The local demonstration below retains its fictional scope.
+
 ## Proof It Works
 
 **Current local checks:** 11 original source tests + 11 portable/public tests · 7 demo assertions · 3 Terraform mock plans. All passed; no cloud operation.
