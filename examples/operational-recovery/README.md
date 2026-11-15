@@ -27,7 +27,7 @@ Save backups and a record of what they contain, restore them into a separate tes
 - Documented application and infrastructure logs, service diagnostics, Log Analytics queries and the difference between provider acceptance and actual delivery.
 - Preserved paused nonproduction states after bounded tests and tracked residual costs, resource ownership and backup/retention requirements.
 
-This case study draws on a workforce/operations platform I designed and implemented. Organization details and records are excluded. The public code makes selected patterns reproducible; the screenshots show a working local demonstration with fictional data. [Validation scope](docs/VALIDATION.md) separates that evidence from testing against the actual cloud service.
+This case study draws on a workforce/operations platform I designed and implemented. Organization details and records are excluded. The public code makes selected patterns reproducible; the local demonstration uses fictional data, and its placeholder screenshots have been removed. [Validation scope](docs/VALIDATION.md) separates that evidence from testing against the actual cloud service.
 
 ### Actual implementation code
 
@@ -316,7 +316,7 @@ terraform -chdir=infra test -filter=tests/recovery.tftest.hcl
 
 ### 4. Visible results
 
-The dashboard runs the same domain code as the CLI. Desktop/mobile rendering, all three tabs, rerunning the demonstration, cross-origin write rejection and unlisted-file rejection were checked. The screenshots are captured from those runs.
+The dashboard runs the same domain code as the CLI. Desktop/mobile rendering, all three tabs, rerunning the demonstration, cross-origin write rejection and unlisted-file rejection were checked. Those local test results remain documented; proper application screenshots are deferred.
 
 Expected access denials are successful negative tests. Cloud permissions, network connectivity and provider integrations need their own acceptance evidence.
 

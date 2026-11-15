@@ -244,7 +244,7 @@ terraform -chdir=infra test
 
 ### 4. Visible evidence
 
-The screenshots show this local program, not fabricated Azure Portal results. [Dated validation](docs/VALIDATION.md) records what was executed. [Nonproduction capture plan](docs/SCREENSHOT-PLAN.md) identifies future portal/terminal evidence without starting services for screenshots.
+The local program remains available to run; proper Azure and application screenshots are deferred. [Dated validation](docs/VALIDATION.md) records what was executed. [Nonproduction capture plan](docs/SCREENSHOT-PLAN.md) identifies future portal/terminal evidence without starting services for screenshots.
 
 ## Run It Locally
 
