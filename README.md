@@ -1,10 +1,12 @@
 # Azure Backup & Recovery Engineering
 
+[![Platform backup and recovery — illustrated overview](docs/diagrams/architecture.png)](docs/diagrams/architecture.svg)
+
+[View SVG](docs/diagrams/architecture.svg) · [Download PNG](docs/diagrams/architecture.png) · [Edit in draw.io](docs/diagrams/architecture.drawio)
+
 **Recover the records, files, keys and settings the application needs to work.**
 
 [The problem](#the-business-problem) · [The solution](#the-solution) · [What was built](#what-was-built) · [Proof it works](#proof-it-works) · [Commands](docs/COMMANDS.md) · [Step by step](#step-by-step)
-
-![Working recovery orchestration](docs/images/01-overview.png)
 
 ## The Business Problem
 
@@ -155,7 +157,7 @@ Record backup/restore timing, RPO/RTO observations and missing dependencies. Rem
 | Failure boundary | A meaningful denied, malformed, stale or failed case | Not yet recorded |
 | Recovery / cleanup | What you restored or removed and what remains billed | Not yet recorded |
 
-Capture your own architecture/configuration, one working result and one failure/recovery result. Keep tokens, credentials, personal records and private identifiers out of public screenshots. Existing portfolio images are references, not evidence that you performed these steps.
+Capture your own architecture/configuration, one working result and one failure/recovery result. Keep tokens, credentials, personal records and private identifiers out of public screenshots. The architecture diagram explains the design; record your own results rather than treating it as execution evidence.
 
 ### Troubleshooting order
 
@@ -190,19 +192,7 @@ A short walkthrough of the process, with technical instructions and evidence lim
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  Key[Source Key Vault versions] --> Coverage[Six-hour coverage and backup-age check]
-  Coverage --> Lease[Finite storage lease]
-  Lease --> Backup[Protected key backup]
-  Backup --> Store[(Private backup storage + receipt)]
-  Store --> Verify[Checksum / exact versions / target checks]
-  Verify --> Vault[Disposable private restore vault]
-  Vault --> Crypto[Synthetic wrap and unwrap check]
-  PG[Engineering portal PostgreSQL] --> Dump[Compressed dump + checksum + inventory]
-  Dump --> PGRestore[Disposable network-isolated PostgreSQL]
-  SQL[SQL / documents / state] -. separate prepared drills .-> Drill[Exact target + no live overwrite]
-```
+[View the illustrated project overview](docs/diagrams/architecture.svg).
 
 ## What Was Built
 
@@ -253,8 +243,6 @@ terraform -chdir=infra test
 **Look for:** default-Off VM/key grants, private versioned storage and a backup-only key role that does not grant unwrap/rotation/deletion. Mock plans create no cloud resources and do not prove private connectivity.
 
 ### 4. Visible evidence
-
-![Executed recovery assertions](docs/images/02-validation.png)
 
 The screenshots show this local program, not fabricated Azure Portal results. [Dated validation](docs/VALIDATION.md) records what was executed. [Nonproduction capture plan](docs/SCREENSHOT-PLAN.md) identifies future portal/terminal evidence without starting services for screenshots.
 

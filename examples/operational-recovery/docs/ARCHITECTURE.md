@@ -13,20 +13,19 @@ A small cloud platform needed reliable operational records, controlled running c
 
 ## Processing path
 
-```mermaid
-flowchart TD
-  App[Operational application] --> DB[(Database)]
-  DB --> Backup[Backup and count inventory]
-  Backup --> Store[(Private versioned backup storage)]
-  Store --> Verify[Checksum and archive verification]
-  Verify --> Restore[Disposable isolated restore]
-  Restore --> Compare[Application inventory comparison]
-  Runtime[Apps / jobs / storage] --> Logs[Resource diagnostics / container log collection]
-  Logs --> LAW[Log Analytics workspace]
-  LAW --> Select[Exact-source metadata selection]
-  Select --> Collector[Managed-identity collector / independent checkpoint]
-  Collector --> SIEM[Hub security operations table]
-```
+1. **Operational application** → **Database**.
+2. **Database** → **Backup and count inventory**.
+3. **Backup and count inventory** → **Private versioned backup storage**.
+4. **Private versioned backup storage** → **Checksum and archive verification**.
+5. **Checksum and archive verification** → **Disposable isolated restore**.
+6. **Disposable isolated restore** → **Application inventory comparison**.
+7. **Apps / jobs / storage** → **Resource diagnostics / container log collection**.
+8. **Resource diagnostics / container log collection** → **Log Analytics workspace**.
+9. **Log Analytics workspace** → **Exact-source metadata selection**.
+10. **Exact-source metadata selection** → **Managed-identity collector / independent checkpoint**.
+11. **Managed-identity collector / independent checkpoint** → **Hub security operations table**.
+
+[View the illustrated project overview](../../../docs/diagrams/architecture.svg).
 
 ## Portable reference boundary
 

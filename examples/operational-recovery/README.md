@@ -6,8 +6,6 @@
 
 [The problem](#the-business-problem) · [The solution](#the-solution) · [What was built](#what-was-built) · [Proof it works](#proof-it-works) · [Run it](#run-it-locally) · [Step by step](#step-by-step)
 
-![Overview of the working demonstration](docs/images/01-overview.png)
-
 ## The Business Problem
 
 When a service fails, the operator needs to establish what stopped, which records or imports were affected and whether the last operation actually completed. Information spread across job histories, application logs and cloud settings makes that investigation slower and can encourage repeating an action whose outcome is still uncertain.
@@ -200,7 +198,7 @@ docker rm -f my-recovery-web my-restored-web
 | Failure boundary | A meaningful denied, malformed, stale or failed case | Not yet recorded |
 | Recovery / cleanup | What you restored or removed and what remains billed | Not yet recorded |
 
-Capture your own architecture/configuration, one working result and one failure/recovery result. Keep tokens, credentials, personal records and private identifiers out of public screenshots. Existing portfolio images are references, not evidence that you performed these steps.
+Capture your own architecture/configuration, one working result and one failure/recovery result. Keep tokens, credentials, personal records and private identifiers out of public screenshots. The architecture diagram explains the design; record your own results rather than treating it as execution evidence.
 
 ### Troubleshooting order
 
@@ -235,18 +233,17 @@ A short walkthrough of the process, with technical instructions and evidence lim
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  App[Operational application] --> DB[(Database)]
-  DB --> Backup[Backup and count inventory]
-  Backup --> Store[(Private versioned backup storage)]
-  Store --> Verify[Checksum and archive verification]
-  Verify --> Restore[Disposable isolated restore]
-  Restore --> Compare[Application inventory comparison]
-  Runtime[Apps / jobs / storage] --> Logs[Diagnostic settings]
-  Logs --> LAW[Log Analytics workspace]
-  LAW -. selected approved tables .-> SIEM[Optional SIEM ingestion]
-```
+1. **Operational application** → **Database**.
+2. **Database** → **Backup and count inventory**.
+3. **Backup and count inventory** → **Private versioned backup storage**.
+4. **Private versioned backup storage** → **Checksum and archive verification**.
+5. **Checksum and archive verification** → **Disposable isolated restore**.
+6. **Disposable isolated restore** → **Application inventory comparison**.
+7. **Apps / jobs / storage** → **Diagnostic settings**.
+8. **Diagnostic settings** → **Log Analytics workspace**.
+9. Log Analytics workspace has a conditional/reference connection to Optional SIEM ingestion (selected approved tables).
+
+[View the illustrated project overview](../../docs/diagrams/architecture.svg).
 
 ## What Was Built
 
@@ -276,7 +273,6 @@ npm run test:source
 ```
 
 The selected original tests run offline. [Validation](docs/VALIDATION.md) records current counts and distinguishes them from historical hosted evidence.
-
 
 **Current local checks:** 12 extracted-source tests + 10 portable tests passed · 5 demonstration checks · 1 Terraform tests using simulated cloud responses.
 
@@ -321,8 +317,6 @@ terraform -chdir=infra test -filter=tests/recovery.tftest.hcl
 ### 4. Visible results
 
 The dashboard runs the same domain code as the CLI. Desktop/mobile rendering, all three tabs, rerunning the demonstration, cross-origin write rejection and unlisted-file rejection were checked. The screenshots are captured from those runs.
-
-![Positive and negative checks from the running demonstration](docs/images/02-validation.png)
 
 Expected access denials are successful negative tests. Cloud permissions, network connectivity and provider integrations need their own acceptance evidence.
 
@@ -404,7 +398,6 @@ An investigation query initially missed real recovery outcomes, and provider acc
 ## Repository Map
 
 `reference/` contains extracted implementation logic and original selected tests.
-
 
 ```text
 infra/               Terraform source, example inputs and mock plan tests

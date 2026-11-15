@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1444" viewBox="0 0 1200 1444" role="img" aria-labelledby="title desc">
+<title id="title">Platform backup and recovery — illustrated architecture</title>
+<desc id="desc">Documented recovery dependencies, separated by data type. This is a dependency view. Public Terraform and local tests do not commission every backup job or prove a hosted restore.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#586574" /></marker></defs>
+<rect width="1200" height="1444" fill="white" />
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="54" y="36" font-size="12" font-weight="700" letter-spacing="1.8" fill="#617084">PROJECT ARCHITECTURE · ILLUSTRATED OVERVIEW</text>
+<text x="54" y="79" font-size="30" font-weight="700" fill="#172d46">Platform backup and recovery</text>
+<text x="54" y="110" font-size="16" fill="#526276">Documented recovery dependencies, separated by data type</text>
+<path d="M600.0 336 V370.0 H228.66666666666666 V402" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M600.0 336 V370.0 H600.0 V402" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M600.0 336 V370.0 H971.3333333333333 V402" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M228.66666666666666 574 V608.0 H228.66666666666666 V640" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M600.0 574 V608.0 H600.0 V640" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M971.3333333333333 574 V608.0 H971.3333333333333 V640" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M228.66666666666666 812 V846.0 H600.0 V878" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M600.0 812 V846.0 H600.0 V878" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M971.3333333333333 812 V846.0 H600.0 V878" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<path d="M600.0 1050 V1084.0 H600.0 V1116" fill="none" stroke="#586574" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#arrow)" />
+<g data-node="n0_0"><rect x="425.0" y="166" width="350" height="170" rx="7" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="582.0" y="178" data-purpose-icon="n0_0"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#315f8a" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#315f8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="10" cy="5" rx="8" ry="3" /><path d="M2 5v13c0 3 10 4 15 1M2 11c0 3 12 4 16 1V5" /><path d="M15 16h5v6m0-6-6 6" /></g></svg>
+<text x="600.0" y="238" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Platform recovery scope</text>
+<text x="600.0" y="266" text-anchor="middle" font-size="14" fill="#40556b">Shows the parts needed to recover the</text>
+<text x="600.0" y="284" text-anchor="middle" font-size="14" fill="#40556b">platform together.</text>
+</g>
+<g data-node="n1_0"><rect x="60.0" y="404" width="337.3333333333333" height="170" rx="7" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="210.66666666666666" y="416" data-purpose-icon="n1_0"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#527a50" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#527a50" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14c0 4 18 4 18 0V5M3 12c0 4 18 4 18 0" /></g></svg>
+<text x="228.66666666666666" y="476" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Business database</text>
+<text x="228.66666666666666" y="504" text-anchor="middle" font-size="14" fill="#40556b">Holds the business records that need</text>
+<text x="228.66666666666666" y="522" text-anchor="middle" font-size="14" fill="#40556b">database recovery.</text>
+</g>
+<g data-node="n1_1"><rect x="431.3333333333333" y="404" width="337.3333333333333" height="170" rx="7" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="582.0" y="416" data-purpose-icon="n1_1"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#527a50" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#527a50" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h10l5 5v15H5V2Zm10 0v6h5M8 12h9m-9 4h9m-9 4h5" /></g></svg>
+<text x="600.0" y="476" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Documents</text>
+<text x="600.0" y="504" text-anchor="middle" font-size="14" fill="#40556b">Holds private files and their retained</text>
+<text x="600.0" y="522" text-anchor="middle" font-size="14" fill="#40556b">older copies.</text>
+</g>
+<g data-node="n1_2"><rect x="802.6666666666666" y="404" width="337.3333333333333" height="170" rx="7" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="953.3333333333333" y="416" data-purpose-icon="n1_2"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#527a50" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#527a50" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18" /><circle cx="8" cy="6" r="2" fill="white" /><circle cx="16" cy="12" r="2" fill="white" /><circle cx="10" cy="18" r="2" fill="white" /></g></svg>
+<text x="971.3333333333333" y="476" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Control and portal state</text>
+<text x="971.3333333333333" y="504" text-anchor="middle" font-size="14" fill="#40556b">Holds infrastructure records and</text>
+<text x="971.3333333333333" y="522" text-anchor="middle" font-size="14" fill="#40556b">developer-portal data.</text>
+</g>
+<g data-node="n2_0"><rect x="60.0" y="642" width="337.3333333333333" height="170" rx="7" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="210.66666666666666" y="654" data-purpose-icon="n2_0"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#745386" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#745386" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6" /><path d="m12 12 10 10m-4-4 3-3m-6 0 3-3M6 6h.1" /></g></svg>
+<text x="228.66666666666666" y="714" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Encryption dependencies</text>
+<text x="228.66666666666666" y="742" text-anchor="middle" font-size="14" fill="#40556b">Keeps the key information needed to read</text>
+<text x="228.66666666666666" y="760" text-anchor="middle" font-size="14" fill="#40556b">encrypted records.</text>
+</g>
+<g data-node="n2_1"><rect x="431.3333333333333" y="642" width="337.3333333333333" height="170" rx="7" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="582.0" y="654" data-purpose-icon="n2_1"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#745386" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#745386" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h10l5 5v15H5V2Zm10 0v6h5M8 12h9m-9 4h9m-9 4h5" /></g></svg>
+<text x="600.0" y="714" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Document dependencies</text>
+<text x="600.0" y="742" text-anchor="middle" font-size="14" fill="#40556b">Keeps file ownership, version and</text>
+<text x="600.0" y="760" text-anchor="middle" font-size="14" fill="#40556b">safety-check information.</text>
+</g>
+<g data-node="n2_2"><rect x="802.6666666666666" y="642" width="337.3333333333333" height="170" rx="7" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="953.3333333333333" y="654" data-purpose-icon="n2_2"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#745386" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#745386" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="12" rx="2" /><path d="M7 10V7a5 5 0 0 1 10 0v3M12 15v3" /></g></svg>
+<text x="971.3333333333333" y="714" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Portal dependencies</text>
+<text x="971.3333333333333" y="742" text-anchor="middle" font-size="14" fill="#40556b">Keeps portal data, secrets and</text>
+<text x="971.3333333333333" y="760" text-anchor="middle" font-size="14" fill="#40556b">certificates recoverable.</text>
+</g>
+<g data-node="n3_0"><rect x="425.0" y="880" width="350" height="170" rx="7" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="582.0" y="892" data-purpose-icon="n3_0"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#996e23" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#996e23" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 2 7 3v5c0 4-7 8-7 8S2 14 2 10V5l7-3Z" /><circle cx="17" cy="16" r="4" /><path d="m20 19 3 3" /></g></svg>
+<text x="600.0" y="952" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Isolated recovery validation</text>
+<text x="600.0" y="980" text-anchor="middle" font-size="14" fill="#40556b">Checks restored copies away from the live</text>
+<text x="600.0" y="998" text-anchor="middle" font-size="14" fill="#40556b">application.</text>
+</g>
+<g data-node="n4_0"><rect x="425.0" y="1118" width="350" height="170" rx="7" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+<svg width="36" height="36" viewBox="0 0 40 40" x="582.0" y="1130" data-purpose-icon="n4_0"><rect x="1" y="1" width="38" height="38" rx="8" fill="white" stroke="#527a50" stroke-opacity="0.3" /><g transform="translate(8 8)" fill="none" stroke="#527a50" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="15" height="18" rx="2" /><path d="M9 4V2h7v2m-9 6 1 1 2-2m2 1h5m-10 5 1 1 2-2m2 1h5m-10 4h10" /></g></svg>
+<text x="600.0" y="1190" text-anchor="middle" font-size="16" font-weight="700" fill="#20384f">Recovery evidence</text>
+<text x="600.0" y="1218" text-anchor="middle" font-size="14" fill="#40556b">Records what recovery proved and what still</text>
+<text x="600.0" y="1236" text-anchor="middle" font-size="14" fill="#40556b">needs checking.</text>
+</g>
+<line x1="54" y1="1316" x2="1146" y2="1316" stroke="#dce2e9" />
+<text x="54" y="1337" font-size="13" fill="#526276">This is a dependency view. Public Terraform and local tests do not commission every backup job or prove a hosted restore.</text>
+<text x="54" y="1418" font-size="11.5" fill="#687789">truthofsource/azure-backup-and-recovery · Purpose icons, not vendor logos or completion status</text></g></svg>

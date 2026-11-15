@@ -114,7 +114,6 @@ bash scripts/check-restore.sh dump.sql.gz dump.sql.gz.sha256 expected.inventory.
 
 That script creates a disposable network-isolated local container and removes it afterward. Follow [the PostgreSQL procedure](../scripts/README.md) for compatibility and consistency checks. The cloud-backup script uploads through managed identity and is a separate explicitly enabled operation; merely documenting it does not schedule or authorize a backup.
 
-
 ## Troubleshooting and cleanup
 
 If imports fail, confirm that the command uses the virtual environment's Python. If port 8011 is occupied, choose an available port with `--port` and open the corresponding `127.0.0.1` URL. If Docker's CLI is installed but the engine is unreachable, start/check the Linux engine rather than reinstalling the application.

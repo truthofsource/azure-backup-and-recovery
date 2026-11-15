@@ -1,5 +1,7 @@
 # Validation evidence — November 6, 2026
 
+> Placeholder screenshots were removed on November 15, 2026. Written test results below retain their original dates and scope; historical screenshot references describe earlier captures. Proper Azure and application screenshots are deferred. The illustrated architecture is a source-based explanation, not a live-service screenshot.
+
 **Terms used here:** A fixture is test data or a test setup used instead of real business records.
 
 ## Executed locally for this revision
