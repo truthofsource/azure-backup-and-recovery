@@ -1,0 +1,248 @@
+{
+  "source_repository": "platform-operations-and-recovery",
+  "source_commit": "0e59f69d6a3a1fe52908fd526426dad09c0f7950",
+  "destination": "azure-backup-and-recovery",
+  "copied_files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "84a5ff4d6005f5f7dceb0d075394fbb899a8bf62f8546850c9da1d4825d7a5d7"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "sha256": "857e6696741e4bee8c8ccfe40bef84b2f0dc5e42ce16d537382497d873b1ca0d"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "f416274a96683c852acf291718b136042ddc7c44a44737cd09cf2883b8b88652"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1671e11d0985edd660b3f6c623c37205372ee71f860aed66beb74d766bd96f70"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1e979a281274c4efe6ff60694e7d3a88f302ebb3f2a8dc04953fcef2747d3bb6"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "eda970506f87e8b56fea017ceba8748082451756f2145785aa76d64c1606063b"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "f237c497bac3bbfcef640f519cb0013eaf818912e9bde5ad0c28c1db314eddc5"
+    },
+    {
+      "path": "docs/BUILD-YOUR-OWN.md",
+      "sha256": "6d0743da742ec76b1936318bf9a91d76aae8b69969c42c1fddb8c0ebfab81781"
+    },
+    {
+      "path": "docs/COMMANDS.md",
+      "sha256": "fc2b6849d3d3746e75c404f2cd84ce27389c21d774ae0ad02287d36fb1c133c4"
+    },
+    {
+      "path": "docs/IMPLEMENTATION.md",
+      "sha256": "f299b9158c65ea5f7512cba35857562050deb66b0600a285b59fb352a65103c0"
+    },
+    {
+      "path": "docs/LESSONS-LEARNED.md",
+      "sha256": "143ec261c6ab391c96e8a80b266da03e8a2c79c6d4993b4fa1b347f6ca384130"
+    },
+    {
+      "path": "docs/OPERATIONS.md",
+      "sha256": "3323d9e792d6a7736efc1d845c020a491fd8c09433a2c7c7deb13bf1304e287e"
+    },
+    {
+      "path": "docs/REFERENCES.md",
+      "sha256": "56e3b254b03367e44b0c470f40795c19537d61f76f24c8f00e825f2e9165283a"
+    },
+    {
+      "path": "docs/SCALING.md",
+      "sha256": "72605bae9d3f9b429a4f9a58affd4fc3d84c7d1e1e078011d609d2507b58d553"
+    },
+    {
+      "path": "docs/SECURITY-OBSERVABILITY.md",
+      "sha256": "a798c1f9cc0df6afb64369328324ff2e8acc8d1d9a8fbacd3f0b198f9121a8a0"
+    },
+    {
+      "path": "docs/SOURCE-MAP.md",
+      "sha256": "c1fbdb82f9c275e57c6f0428a806d354c14dcdc373516a85942098eba1aabef3"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "sha256": "e4fbef46cf259d825e96a4684e704618d4a531c8067ea264082f120a0730f070"
+    },
+    {
+      "path": "docs/WALKTHROUGH.md",
+      "sha256": "be73756cfa6373048f8204ffc79b4676866b91a6c9de2d926dbbe1cf3cb7706b"
+    },
+    {
+      "path": "docs/images/01-overview.png",
+      "sha256": "7912eba6f6d4d5173c88bc63f7742101c7cb6e4c40fa0b1dacd93d1f37d7e337"
+    },
+    {
+      "path": "docs/images/02-validation.png",
+      "sha256": "d71d5108a24f4ef4a8c74359dcfda8d75a7838c528d39fb82eb290958d70a1fa"
+    },
+    {
+      "path": "docs/images/03-mobile.png",
+      "sha256": "22868a7efe3beca4e3ea460e32bc4c8583887c21807ada10ad31ca2d00104611"
+    },
+    {
+      "path": "docs/source-map.json",
+      "sha256": "e064c240305299b7d04f6e19afc2f29f3eaee0deab5d6a9c8ff71f96616bfcb7"
+    },
+    {
+      "path": "docs/terraform-validation.json",
+      "sha256": "833ebdf254e362d65a0fc1bd867a0a755c7382502e69e35f9f017000108fec55"
+    },
+    {
+      "path": "docs/validation-results.json",
+      "sha256": "d00bc8c1138683fe4be67f00e8b216567b858464ff3ac5c8fefc1d86a2eb2613"
+    },
+    {
+      "path": "infra/.terraform.lock.hcl",
+      "sha256": "d23a603a0c61b28963ab61001c5d4614753403c3a3eeaba21cddeeccf9fb2c43"
+    },
+    {
+      "path": "infra/README.md",
+      "sha256": "6cafe3ead460883bc5d98f453e671f4f9ff30d6b5957ebcdc126f307215d339d"
+    },
+    {
+      "path": "infra/example.tfvars.example",
+      "sha256": "a43c7230839a13001f7fe872e596d91d83badcc2da605264bb3862eacefc5946"
+    },
+    {
+      "path": "infra/main.tf",
+      "sha256": "813136063e3f77757e01c194c0160c740a34a3c194988c9795298d4f3f6aa274"
+    },
+    {
+      "path": "infra/monitoring.tf",
+      "sha256": "f95a807619ed31bef16d360dd5e51b8219f0ba6cccde68fcdd5d9032053cd6db"
+    },
+    {
+      "path": "infra/recovery-vm.tf",
+      "sha256": "ddfddbf812ad872218a65d2e37cc3994623c43e253cbb38d35382b3b2bea54ac"
+    },
+    {
+      "path": "infra/storage.tf",
+      "sha256": "11b7bcb60682831eccc599843b8f7ae1edd0a96cb51d4fe22948ffc2bfa6c9d2"
+    },
+    {
+      "path": "infra/tests/recovery.tftest.hcl",
+      "sha256": "34506b399c905f9f502cb006cb8a1931966890047600a6703f554d5480465f60"
+    },
+    {
+      "path": "infra/variables.tf",
+      "sha256": "0a6be0c890d1295fd92de045cda1e965ebfe1c645b69580446955e96e6975d79"
+    },
+    {
+      "path": "infra/versions.tf",
+      "sha256": "8d2f5e302e73fd518523e9ee38aede5f6d15dc9e051451e07fbca104d79ce6f0"
+    },
+    {
+      "path": "lab/__init__.py",
+      "sha256": "95a8296d613b692bb13af925e90204c901108a2c30dfd3ffd4d0fadca55cb5f9"
+    },
+    {
+      "path": "lab/__main__.py",
+      "sha256": "d528e758b251fa9f3bf42a326d8644a7055bcd1884112579e88981f33dcbba13"
+    },
+    {
+      "path": "lab/demo.py",
+      "sha256": "1ee90686323e9ae6b91bddf1dd303e8c90c5121078f1e27634479fd3381d82bb"
+    },
+    {
+      "path": "lab/domain.py",
+      "sha256": "2b04607974092e32e93f58cbb2dd72fb1fef99a413c81d7209b7e3aa0fe45230"
+    },
+    {
+      "path": "lab/project.json",
+      "sha256": "a996cabcee496ebe59770a600241fe5a0d8d0206932bc4a1f86b15694592c7ec"
+    },
+    {
+      "path": "lab/web/app.js",
+      "sha256": "9ec0cd0243a7ef57de9bbc9433a2929a59d553fbcd24eb800c82eed1e3eacb83"
+    },
+    {
+      "path": "lab/web/index.html",
+      "sha256": "47addf14562fe5425bbb5bf82a8e1638c479dcda35bd572a39e9be7c200894ec"
+    },
+    {
+      "path": "lab/web/style.css",
+      "sha256": "96088c1d4d75dbe0d0c5a0d3d214ce19dbff4d9a7956f47071885b10cf40fd12"
+    },
+    {
+      "path": "lab/workbench.py",
+      "sha256": "cc2889350fd182e10a74b1153e2c96ef93d5c295724f0ae281d757d1a2e546b5"
+    },
+    {
+      "path": "package.json",
+      "sha256": "f8c303acfc508cd088083c6a3a6e28c2ea6457cb0602aa89fee3c86bf7030ad3"
+    },
+    {
+      "path": "queries/operations.kql",
+      "sha256": "007bd8d4623a96dab8cccdd6fa9d0f6d1b17e0cc75092966f01ddf8d6ab5120d"
+    },
+    {
+      "path": "reference/README.md",
+      "sha256": "420d3d2498bdb6ce1187b09b454b9ee3dd5da76f40f79178a8f5814a12f3b4de"
+    },
+    {
+      "path": "reference/__init__.py",
+      "sha256": "cb7a7b9fc05c83b7f2ef0e12fe4ae2d6a00ce9c4ab9c95a8535aaf798d8be721"
+    },
+    {
+      "path": "reference/contactIdentity.ts",
+      "sha256": "41a22bd7e1d03e0285bd8974e1954369cf793a1cf5137b97ad4b6519ba48ae29"
+    },
+    {
+      "path": "reference/deliveryReports.test.ts",
+      "sha256": "29861c1f53d4b3aba19a2650b4f1c28753f1b312303e66bee0d929f3109da319"
+    },
+    {
+      "path": "reference/deliveryReports.ts",
+      "sha256": "5057516910a2b19e736b77357d0c6f381be05294a9acf10d613c295aab09b10e"
+    },
+    {
+      "path": "reference/noticeEmailDelivery.test.ts",
+      "sha256": "62d67a5ee9fdd2e59a991d971d562459612508f85f282a28ee4f577ba5237b1f"
+    },
+    {
+      "path": "reference/noticeEmailDelivery.ts",
+      "sha256": "08343a82f036643edbdb4e14d5df6b51ff1f92c58c59dea1495562a08e50ffe3"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "b1e521c164fe482d939b2ccfd8c71fe5bd135822aab4e4e3f8015a44898fa640"
+    },
+    {
+      "path": "scripts/README.md",
+      "sha256": "e188f9825af38a2ff4aaefb9abf45f290370d5bc9c46173eca3b1fefe70899d9"
+    },
+    {
+      "path": "scripts/backup-postgres.sh",
+      "sha256": "23f29ea51505f4fc02f9046d37e232ec2a1c38f78f463a16f932baf0babd5bcd"
+    },
+    {
+      "path": "scripts/check-restore.sh",
+      "sha256": "2a211d74e8c1e5ad8ae50b57c3d5a4dda743281caf84132aed16ce30ab4e426f"
+    },
+    {
+      "path": "scripts/snapshot_cluster.py",
+      "sha256": "07618e973b6d0426568fd23e20fcc2185ed9c55791342a568d84092a149efa6b"
+    },
+    {
+      "path": "tests/test_demo.py",
+      "sha256": "899f16f01189add1d88283cb779d2059f8c3f1e00004b0624354c7aa1a93a9d6"
+    },
+    {
+      "path": "tests/test_domain.py",
+      "sha256": "63ee8336886ffa7894dba332bb59c64331dd1a982abd76744f34045ced784c86"
+    },
+    {
+      "path": "tests/test_postgres_inventory.py",
+      "sha256": "435f26c96302e3dab76c98314c0b88f69a11fbe86e29888053ceda5fdc35352c"
+    }
+  ],
+  "note": "Source snapshot retained; internal links and location guidance updated separately."
+}

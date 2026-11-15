@@ -1,0 +1,21 @@
+{
+  "title": "Platform Operations & Recovery Engineering",
+  "domain": "LINUX / OBSERVABILITY / RECOVERY / FINOPS",
+  "subtitle": "A saved backup becomes recovery evidence only after a restore test.",
+  "scenario": "A small cloud platform needed reliable operational records, controlled running costs and a recovery path that did not depend on experimenting with its live database or exposing secret material.",
+  "outcome": "Make recovery repeatable, keep operational evidence useful and stop temporary resources without confusing a paused service with an uninstalled component.",
+  "flow": [
+    "Capture application backup and inventory",
+    "Verify checksum and archive readability",
+    "Restore into an isolated temporary target",
+    "Compare application-level counts",
+    "Remove rehearsal resources and record evidence"
+  ],
+  "notes": [
+    "Actual platform source and original offline tests are included under reference/; see implementation and source-map guides.",
+    "The default demo uses a synthetic SQLite database for a fast portable rehearsal.",
+    "PostgreSQL scripts preserve the actual network-isolated restore pattern; they require a reviewed image and separate execution.",
+    "Measured local milliseconds are not a production RTO or an application-consistent cloud recovery guarantee."
+  ],
+  "boundary": "Platform-derived local demonstration with fictional data; extracted source/tests are separately reproducible. No fresh cloud acceptance."
+}

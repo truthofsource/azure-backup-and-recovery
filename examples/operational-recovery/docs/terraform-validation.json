@@ -1,0 +1,10 @@
+{
+  "project": "platform-operations-and-recovery",
+  "executed_at_utc": "2026-11-06T15:11:38.933394+00:00",
+  "applied": false,
+  "init": "passed",
+  "format": "passed",
+  "validate": "passed",
+  "mock_tests": "passed",
+  "mock_tests_passed": 1
+}

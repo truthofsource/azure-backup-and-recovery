@@ -1,0 +1,11 @@
+// Templates: verify the table and custom schema in your own workspace.
+// Never paste private employee data into a public query example.
+AppTraces
+| where TimeGenerated > ago(24h)
+| where Message has "backup"
+| summarize Events=count() by bin(TimeGenerated, 1h), SeverityLevel
+
+// Separate query: storage audit by authentication type, when this table is enabled.
+StorageBlobLogs
+| where TimeGenerated > ago(24h)
+| summarize Requests=count() by AuthenticationType, StatusCode

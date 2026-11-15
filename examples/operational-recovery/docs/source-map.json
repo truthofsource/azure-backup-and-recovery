@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "reviewedDate": "2026-11-06",
+  "files": [
+    {
+      "source": "apps/api/src/email/deliveryReports.ts",
+      "sourceSha256": "bd73d73f50ba172985af9654773f12fcf8de52113f8ca4d304cb314c6fd12af1",
+      "publicFile": "reference/deliveryReports.ts",
+      "changes": "Neutral example identifiers/labels; portable dependency boundary"
+    },
+    {
+      "source": "apps/api/src/email/deliveryReports.test.ts",
+      "sourceSha256": "a86685d200869cbc7a7701d003763e8e0d52eac7a404f17b8837ed196e73a7c6",
+      "publicFile": "reference/deliveryReports.test.ts",
+      "changes": "Neutral example identifiers/labels; portable dependency boundary"
+    },
+    {
+      "source": "apps/api/src/provider/attendanceDelivery.ts",
+      "sourceSha256": "1d645d1e2ee802a645b4b3b59c3b90495fd63c896488917568c1f51164f6583b",
+      "publicFile": "reference/contactIdentity.ts",
+      "changes": "Extract original email normalization/hash; SMS adapter explicitly unavailable"
+    },
+    {
+      "source": "apps/api/src/contracts/noticeEmailDelivery.ts",
+      "sourceSha256": "08343a82f036643edbdb4e14d5df6b51ff1f92c58c59dea1495562a08e50ffe3",
+      "publicFile": "reference/noticeEmailDelivery.ts",
+      "changes": "Neutral example identifiers/labels; portable dependency boundary"
+    },
+    {
+      "source": "apps/api/src/contracts/noticeEmailDelivery.test.ts",
+      "sourceSha256": "1e32532de27c287859b802362c1a0eba7c700fa8284cb4a3abafadf53d14a9f1",
+      "publicFile": "reference/noticeEmailDelivery.test.ts",
+      "changes": "Neutral example identifiers/labels; portable dependency boundary"
+    },
+    {
+      "source": "platform/backstage/hosting/vm/backup-postgres.sh",
+      "sourceSha256": "1d224b8805cb6c71eb761032fb5b23564c75145b6641ab69b19ba497237ca2a9",
+      "publicFile": "scripts/backup-postgres.sh",
+      "changes": "Actual operational logic; neutral portal names; explicit cloud-upload opt-in guard added to uploader"
+    },
+    {
+      "source": "platform/backstage/hosting/vm/check-restore.sh",
+      "sourceSha256": "0b36e55510b5d191e60ed9518bdd6747084fc721b536e3856ca5e9b858584b12",
+      "publicFile": "scripts/check-restore.sh",
+      "changes": "Actual operational logic; neutral portal names; explicit cloud-upload opt-in guard added to uploader"
+    },
+    {
+      "source": "platform/backstage/hosting/vm/snapshot_cluster.py",
+      "sourceSha256": "aaaf4aba724ca05a8072a89f1bb459b4ef37299990203c20e931f9344226092d",
+      "publicFile": "scripts/snapshot_cluster.py",
+      "changes": "Actual operational logic; neutral portal names; explicit cloud-upload opt-in guard added to uploader"
+    }
+  ],
+  "relatedAdaptations": [
+    {
+      "source": "infra/platform/backstage/low-cost-vm-backup.tf",
+      "sourceSha256": "105ce0fe7c3d507547100a32965681ed05ce488215ae87802908d7cde28be779",
+      "publicFile": "infra/monitoring.tf",
+      "relationship": "Parameterized reference adaptation, not a byte-identical copy or live deployment"
+    }
+  ]
+}

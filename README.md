@@ -311,3 +311,11 @@ A zero exit status did not prove a fresh backup existed. Recovery also had to wa
 ## Cost and Cleanup
 
 The default run uses fictional in-memory/local fixtures. No provider operation or cloud deployment occurs. Terraform is opt-in source; a real apply can create billable resources. Keep backups, keys, state and private receipts out of this repository. Public validation is manual-only to conserve Actions minutes.
+
+## Consolidated Examples
+
+These related implementations are now maintained here:
+
+- [platform-operations-and-recovery](examples/operational-recovery/README.md)
+
+See [the consolidation guide](docs/CONSOLIDATION.md) for component scope, preserved tests and historical evidence.
