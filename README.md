@@ -42,6 +42,19 @@ The source key-backup coordinator is also Python. Its local transport uses test 
 
 ## Step by Step
 
+Build an independent version with the [reader-operated walkthrough](docs/BUILD-YOUR-OWN.md). It gives prerequisites, working locations, numbered actions, source-derived commands, expected results, verification and cleanup.
+
+For this project, your working starting point is [`lab/database_rehearsal.py`](lab/database_rehearsal.py). Expected scope: Recovery planning and local evidence checks; live restore acceptance remains separate.
+
+1. **Create your own workspace.** Copy the project and record the source version before editing.
+2. **Prepare and run the baseline.** Use the documented runtimes and selected dependencies, then run the local checks.
+3. **Make your own change.** Edit a project-specific fixture, configuration or rule and rerun its positive and negative cases.
+4. **Verify and document your result.** Capture your own evidence and distinguish a local example from a live integration.
+5. **Extend and close out deliberately.** Plan any independent cloud work separately and clean up only what you created.
+
+<details>
+<summary>How the underlying platform process works</summary>
+
 A short walkthrough of the process, with technical instructions and evidence limits in the sections below.
 
 1. **Identify what must be recovered** — List the databases, files, encryption keys and settings the application needs. Record their owners and how those parts fit together.
@@ -51,6 +64,8 @@ A short walkthrough of the process, with technical instructions and evidence lim
 3. **Prepare a separate restore target** — Use an isolated destination so a recovery test cannot overwrite the live system. The case study distinguishes completed recovery evidence from later rehearsals that remained prepared.
 
 4. **Verify usability and close the test** — Compare recovered contents and check the access needed to use them. Record the result and remove or pause temporary resources when the test is complete.
+
+</details>
 
 ## Architecture
 
