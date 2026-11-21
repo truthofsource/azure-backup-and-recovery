@@ -163,5 +163,3 @@ The numbered steps describe a build procedure. Local syntax checks, an accepted 
 
 - [docs.docker.com — bind-mounts](https://docs.docker.com/engine/storage/bind-mounts/)
 - [www.gnu.org — manual](https://www.gnu.org/software/tar/manual/)
-
-The walkthrough layout follows the prerequisites → creation/configuration → test → verification → troubleshooting → cleanup pattern of the [Splunk project reference](https://github.com/davidharris6/splunk-siem-log-analysis). Its Splunk-specific settings are not copied into unrelated projects.
